@@ -29,8 +29,8 @@ function KareninAlani(kenaruzunlugu){
 			4. Hesaplanan çemberin çevresi döndürülecektir.
 		*/
 
-function CemberinCevresi(/* kodlar buraya */){
-	/* kodlar buraya */
+function CemberinCevresi(r){
+	return Math.round(2*pi*r);
 }
 
 
@@ -47,10 +47,11 @@ function CemberinCevresi(/* kodlar buraya */){
 			4. Hesaplanan çemberin alanı döndürülecektir.
 		*/
 		
-function CemberinAlani(/* kodlar buraya */){
-	/* kodlar buraya */
+function CemberinAlani(r,coef){
+	return Math.round(coef*coef*r)
 }
 
+console.log(CemberinAlani(5,pi))
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -75,21 +76,63 @@ function CemberinAlani(/* kodlar buraya */){
 
 	var ucetambolunenler, enkucuk, enbuyuk, ucebolunenlerintoplami, besyuzdenkucuksayilar, siralisayilar, tekraredensayilar;
 	
-	//3a çözümü
 
+	//3a çözümü 
+	function findSmallest(){
+		let smallest = sayilar[0];
+		for (let i = 0; i<sayilar.length ; i++){
+			if(smallest>sayilar[i]){
+				smallest = sayilar[i];
+			}
+		}
+		console.log('im smallest',smallest)
+		
+	}
+
+	//enkucuk= findSmallest();
+	console.log(findSmallest())
+
+	function findBiggest(){
+		let biggest = sayilar[0];
+		for (let i = 0; i<sayilar.length ; i++){
+			if(biggest<sayilar[i]){
+				biggest = sayilar[i];
+			}
+		}
+		console.log('im biggest',biggest)
+		
+	}
+
+	console.log(findBiggest());
+
+
+	//3b çözümü
+ function checkUceTam(){
+	let returnArr = [];
+		sayilar.forEach((element)=>{
+			if(element%3===0){
+				returnArr.push(element);
+			}
+		})
+		return returnArr;
+	}
+	ucetambolunenler = checkUceTam();
+
+	console.log(ucetambolunenler)
 	/* kodlar buraya */
 	
 	
-	
-	// 3b çözümü:
-
-	/* kodlar buraya */
-		
-		
 		
 	//3c çözümü:
 	
-	/* kodlar buraya */
+	const array1 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+ ucebolunenlerintoplami = ucetambolunenler.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,initialValue);
+
+console.log(ucebolunenlerintoplami);
 
 	
 	
